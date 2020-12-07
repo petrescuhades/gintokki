@@ -9,3 +9,7 @@ RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
 # i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
 # The leading slash is made optional so that this will work either in httpd.conf
 # or .htaccess context
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
