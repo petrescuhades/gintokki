@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+
+  font-family: Arial;
+}
+
+
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+h3 {
+    text-align: center;
+    color: dimgray;
+    font-size: 12px;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+.box {
+    float: left;
+    width: 50%; /* three boxes (use 25% for four, and 50% for two, etc) */
+    padding: 1px; /* if you want space between the images */
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+    /* Add padding BETWEEN each column (if you want) */
+ .row, .row > .column
+{
+  padding: 1px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 1px;
+}
+h4 {
+    text-align: center;
+}
+.social::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.page {
+    float: right;
+    width: 50%; /* three boxes (use 25% for four, and 50% for two, etc) */
+    padding :15px;
+    
+}
+    .page:hover {
+        filter: brightness(50%);
+    }
+
+
+
+
+     .dropbtn {
+        display: inline-block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .dropdown:hover .dropbtn {
+            background-color: rebeccapurple;
+        }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: mediumpurple;
+}
+
+
+
+#illustration {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+}
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: mediumpurple; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+
+.gallery img{
+transition: 1s;
+
+
+}
+ .gallery img:hover {
+     transition: 0.5s;
+         filter: grayscale(100%);
+         
+ }
+
+/* Responsive layout - web */
+@media screen and (min-width: 0px) {
+  .column {
+    width: 100%;
+  }
+    #illustration img {
+        max-width: 100%;
+        padding: 5px;
+    }
+    
+    }
+    .line img {
+        display: block;
+        width: 100%
+    }
+/* Responsive layout - mobile*/
+@media screen and (max-width: 800px) {
+  
+    .column {
+        width: 100%;
+        
+    }
+
+    #illustration {
+     padding:0px;
+      
+       width: 100%;
+
+    }
+
+    #illustration img {
+        max-width: 100%;
+
+    }
+    .banner img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .line img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%
+    }
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: mediumpurple; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 50%; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+    }
+    
+    }

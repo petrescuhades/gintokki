@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Gintokki">
+    <meta name="description" content="Illustration and design portfolio of Maria Petrescu, Gintokki. Fantasy paintings and graphics.">
+    <link rel="stylesheet" href="css/css_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+    <script src="js\lightbox-plus-jquery.min.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the body */
+        body {
+            margin: 0;
+            background: black;
+        }
+
+        @font-face {
+            font-family: ginfonty;
+            src: url(GinFontY-Regular.ttf);
+        }
+
+        p {
+            color: white;
+        }
+        h1, h2{
+            color:white;
+        }
+
+
+        /* Header/logo Title */
+        .header {
+            padding: 0px;
+            text-align: center;
+            background-image: url("https://i.pinimg.com/originals/c6/12/b2/c612b2bd31ebb6c57ecb2c3cab0a2bd6.jpg");
+            color: white;
+            font-family: ginfonty;
+        }
+
+            /* Increase the font size of the heading */
+            .header h1 {
+                font-size: 40px;
+            }
+
+        /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+        .navbar {
+            overflow: hidden;
+            background-color: #1d1b22;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            font-family: ginfonty;
+        }
+
+            /* Style the navigation bar links */
+            .navbar a {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+                /* Change color on hover */
+                .navbar a:hover {
+                    background-color: mediumpurple;
+                    color: antiquewhite;
+                }
+
+                /* Active/current link */
+                .navbar a.active {
+                    background-color: rebeccapurple;
+                    color: white;
+                }
+                /*hide link that should open and close on mobile*/
+                .navbar a.icon {
+                    display: none;
+                }
+
+
+
+
+
+        /* Main column */
+
+        .content1 {
+            margin:20px;
+            padding:20px;
+            display: grid;
+            grid-template-columns: auto auto;
+            background-color:slategrey;
+            /* Footer */
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: rebeccapurple;
+            color: antiquewhite;
+            font-family: ginfonty;
+        }
+
+            .footer a {
+                color: mediumslateblue;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    color: white;
+                }
+
+        .gallery {
+            padding: 35px;
+            /*dropdown*/
+        }
+
+        .navbar {
+            overflow: hidden;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+            .dropdown .dropbtn {
+                font-size: 17px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: white;
+                padding: 14px 20px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: mediumpurple;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: mediumpurple;
+        }
+
+
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .navbar a:not(:first-child), .dropdown.dropbtn {
+                display: none;
+            }
+
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+
+
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+                .header img {
+                    width: 75%;
+                }
+
+                .navbar.responsive {
+                    position: sticky;
+                }
+
+                    .navbar.responsive .icon {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+
+                    .navbar.responsive a {
+                        float: none;
+                        display: block;
+                        text-align: left;
+                    }
+
+                    .navbar.responsive.dropdown {
+                        float: left;
+                    }
+
+                    .navbar.responsive.dropdown-content {
+                        position: sticky;
+                    }
+
+                    .navbar.responsive.dropdown.dropbtn {
+                        display: block;
+                        width: 100%;
+                        text-align: left;
+                    }
+            }
+
+            .loader img {
+                position: absolute;
+                top: 10%;
+                left: 20%;
+            }
+        }
+
+        #myBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: mediumpurple; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 50%; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+        }
+
+            #myBtn:hover {
+                background-color: #555; /* Add a dark-grey background on hover */
+            }
+    </style>
+</head>
+<body>
+
+
+
+    <link rel="stylesheet" href="css_styles.css">
+    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
+    <script src="lightbox.min.css"></script>
+    <script src="lightbox-plus-jquery.min.js"></script>
+
+    <div class="navbar" id="mynavbar">
+        <a href="https://gintokki.art"><img src="2.png" height="20" width="100" /></a>
+        <div class="dropdown">
+            <a class="dropbtn">
+                Gallery
+                <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="index.html">aaa</a>
+                <a href="index.html">bbb</a>
+            </div>
+        </div>
+        <a href="#">About</a>
+        <a href="contact.html" class="">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            NAV
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="header">
+
+        <img src="100.gif" />    </div>
+    <br />
+    <div class="header">
+
+        <h1>About Me</h1>
+    </div>
+    <div class="content1">
+        <div class="text">
+            <h2>Hello!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <img src="https://media.discordapp.net/attachments/667019963256537128/783063598045069422/Tuf3_2.png" height="350" width="350" />
+    </div>
+    <div class="content1">
+        <img src="https://media.discordapp.net/attachments/667019963256537128/783063598045069422/Tuf3_2.png" height="350" width="350" />
+        <div class="text">
+            <h2>Hello!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <h2>Get in touch!</h2>
+        <a href="mailto: petrescu301@gmail.com">petrescu301@gmail.com</a>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="https://cdn2.iconfinder.com/data/icons/arrows-part-1/32/tiny-arrow-top-2-512.png" width="30" height="25" /></button>
+
+    </div>
+
+
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+        }
+        function myFunction() {
+            var x = document.getElementById("mynavbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+
+            }
+        }
+    </script>
+    <script>
+        $('body').append('<div style="" id="loadingDiv"><div class="loader"><img src="2.png"/></div></div>');
+        $(window).on('load', function () {
+            setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
+        });
+        function removeLoader() {
+            $("#loadingDiv").fadeOut(500, function () {
+                // fadeOut complete. Remove the loading div
+                $("#loadingDiv").remove(); //makes page more lightweight
+            });
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Center website */
+
+
+h1 {
+    font-size: 50px;
+    color: #DEBAC0;
+}
+
+h2 {
+    font-size: 25px;
+    color: #DEBAC0;
+}
+
+a {
+    color: #DEBAC0;
+    font-family: Arial;
+}
